@@ -1,0 +1,15 @@
+class Solution {
+// O(n) -> time
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        var map:[Int:Int] = [:]
+        for index in nums.indices {
+            let needed = target - nums[index]
+            if map[needed] != nil {
+                return [index,map[needed]!]
+            } else {
+                map[nums[index]] = index
+            }
+        }
+        return []
+    }
+}
